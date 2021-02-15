@@ -5,8 +5,8 @@ using UnityEngine;
 public class FrankMovement : MonoBehaviour
 {
     public float speed;
-    public float chase;
-    public float stop;
+    public float chaseDistance;
+    public float stopDistance;
     public GameObject target;
 
     private float targetDistance;
@@ -37,10 +37,13 @@ public class FrankMovement : MonoBehaviour
     void Update()
     {
         targetDistance = Vector2.Distance(transform.position, target.transform.position);
-        if (targetDistance < chase && targetDistance > stop)
+        if (targetDistance < chaseDistance && targetDistance > stopDistance)
+        {
             chasePlayer();
+            animator.SetBool("walking", true);
+        }   
         else
             stopChase();
-        animator.SetBool("walking", true);
+            
     }
 }

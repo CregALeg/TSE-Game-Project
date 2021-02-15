@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 367050051}
   - component: {fileID: 367050050}
   m_Layer: 0
-  m_Name: Enemy - Frank Sprite Sheet_0
+  m_Name: Enemy Type 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  chase: 50
-  stop: 2.5
+  chaseDistance: 50
+  stopDistance: 3
   target: {fileID: 821516543}
   animator: {fileID: 367050047}
 --- !u!50 &367050051
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 821516548}
   - component: {fileID: 821516549}
   m_Layer: 0
-  m_Name: Beev ide_1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
