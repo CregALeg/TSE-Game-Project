@@ -17,6 +17,6 @@ public class lightAttack : MonoBehaviour
 
     void Attack()
     {
-        animator.SetTrigger("lightAttack");
+        
     }
 }

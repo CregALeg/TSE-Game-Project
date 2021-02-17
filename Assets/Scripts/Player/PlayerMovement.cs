@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool direction;
     float horizontal;
     float vertical;
+    bool isAttacking;
 
 
     // Start is called before the first frame update
@@ -35,11 +36,36 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(Input.GetMouseButton(0))
+        {
+            isAttacking = true;
+            if(vertical != 0 || horizontal != 0)
+            {
+                vertical = 0;
+                horizontal = 0;
+                animator.SetFloat("Speed", 0);
+            }
 
-        Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
-        transform.position = transform.position + movement * Time.deltaTime;
-        ChangeDirection(horizontal);
+            animator.SetTrigger("lightAttack");
+        }
 
+        if(vertical != 0 || horizontal != 0 && !isAttacking)
+        {
+            Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
+            transform.position = transform.position + movement * Time.deltaTime;
+            ChangeDirection(horizontal);
+        }
+
+        
+
+    }
+
+    public void AlertObservers(string message)
+    {
+        if (message == "attackEnded");
+        {
+            isAttacking = false;
+        }
     }
 
     void Awake()
