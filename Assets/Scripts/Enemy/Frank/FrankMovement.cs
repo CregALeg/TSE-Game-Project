@@ -8,6 +8,7 @@ public class FrankMovement : MonoBehaviour
     public float chaseDistance;
     public float stopDistance;
     public GameObject target;
+    public float Health;
 
     private float targetDistance;
     public Animator animator;
@@ -15,7 +16,7 @@ public class FrankMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void chasePlayer()
@@ -41,9 +42,10 @@ public class FrankMovement : MonoBehaviour
         {
             chasePlayer();
             animator.SetBool("walking", true);
-        }   
+        }
         else
             stopChase();
-            
+
     }
+
 }

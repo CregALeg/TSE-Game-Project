@@ -12,6 +12,12 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     float vertical;
     bool isAttacking;
+    float TimeBtwAttack;
+    public float startTimeBtwAttack;
+    public Transform attackPos;
+    public float attackRange;
+    public LayerMask whatIsEnemy;
+    public int damage;
 
 
     // Start is called before the first frame update
@@ -30,24 +36,39 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+        
 
     }
 
     void FixedUpdate()
     {
-        if(Input.GetMouseButton(0))
+        if(TimeBtwAttack <= 0)
         {
-            isAttacking = true;
-            if(vertical != 0 || horizontal != 0)
+            if (Input.GetMouseButton(0))
             {
-                vertical = 0;
-                horizontal = 0;
-                animator.SetFloat("Speed", 0);
-            }
+                isAttacking = true;
+                if (vertical != 0 || horizontal != 0)
+                {
+                    vertical = 0;
+                    horizontal = 0;
+                    animator.SetFloat("Speed", 0);
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
 
-            animator.SetTrigger("lightAttack");
+                    for(int i = 0; i < enemiesToDamage.Length; i++)
+                    {
+                        enemiesToDamage[i].GetComponent<FrankMovement>().Health -= damage;
+                    }
+                }
+
+                animator.SetTrigger("lightAttack");
+                TimeBtwAttack = startTimeBtwAttack;
+            }
         }
+        else
+        {
+            TimeBtwAttack -= Time.deltaTime;
+        }
+        
 
         if(vertical != 0 || horizontal != 0 && !isAttacking)
         {
@@ -85,4 +106,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
 }
