@@ -276,7 +276,7 @@ MonoBehaviour:
   stopDistance: 3
   target: {fileID: 821516543}
   Health: 3
-  startTimeBtwAttack: 1000000
+  startTimeBtwAttack: 3
   attackPos: {fileID: 856343957}
   attackRange: 2
   whatIsPlayer:
