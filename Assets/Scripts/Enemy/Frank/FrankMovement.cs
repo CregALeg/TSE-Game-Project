@@ -37,6 +37,13 @@ public class FrankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Dead");
+        }
+
+
         targetDistance = Vector2.Distance(transform.position, target.transform.position);
         if (targetDistance < chaseDistance && targetDistance > stopDistance)
         {
@@ -46,6 +53,12 @@ public class FrankMovement : MonoBehaviour
         else
             stopChase();
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+        Debug.Log("Damage Taken");
     }
 
 }
