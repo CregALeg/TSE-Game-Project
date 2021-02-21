@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float attackRange;
     public LayerMask whatIsEnemy;
     public int damage;
+    public int heath;
 
 
     // Start is called before the first frame update
@@ -52,14 +53,15 @@ public class PlayerMovement : MonoBehaviour
                     vertical = 0;
                     horizontal = 0;
                     animator.SetFloat("Speed", 0);
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
-
-                    for(int i = 0; i < enemiesToDamage.Length; i++)
-                    {
-                        enemiesToDamage[i].GetComponent<FrankMovement>().Health -= damage;
-                    }
+                    
                 }
 
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+
+                for (int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
+                }
                 animator.SetTrigger("lightAttack");
                 TimeBtwAttack = startTimeBtwAttack;
             }
@@ -70,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        if(vertical != 0 || horizontal != 0 && !isAttacking)
+        if(!isAttacking)
         {
             Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
             transform.position = transform.position + movement * Time.deltaTime;
