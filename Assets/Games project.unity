@@ -147,8 +147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208944994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: -0.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.75, y: -0.1, z: 0}
+  m_LocalScale: {x: 0.88234353, y: 0.88234353, z: 0.88234353}
   m_Children: []
   m_Father: {fileID: 821516547}
   m_RootOrder: 0
@@ -541,8 +541,8 @@ MonoBehaviour:
   Speed: 10
   animator: {fileID: 821516548}
   startTimeBtwAttack: 0.3
-  attackPos: {fileID: 0}
-  attackRange: 0
+  attackPos: {fileID: 208944995}
+  attackRange: 2
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 0
@@ -606,7 +606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821516543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.99, y: -1.24, z: 0}
+  m_LocalPosition: {x: -16.23, y: -1.16, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 208944995}
