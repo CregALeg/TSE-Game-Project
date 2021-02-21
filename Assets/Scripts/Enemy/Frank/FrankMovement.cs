@@ -72,24 +72,28 @@ public class FrankMovement : MonoBehaviour
             animator.SetBool("isDead", true);
             
         }
-
-
-        targetDistance = Vector2.Distance(transform.position, target.transform.position);
-        if (targetDistance < chaseDistance && targetDistance > stopDistance)
-        {
-            chasePlayer();
-            animator.SetBool("walking", true);
-        }
-        else if(targetDistance > chaseDistance)
-        {
-            animator.SetBool("walking", false);
-        }
         else
         {
-            stopChase();
+            targetDistance = Vector2.Distance(transform.position, target.transform.position);
+            if (targetDistance < chaseDistance && targetDistance > stopDistance)
+            {
+                chasePlayer();
+                animator.SetBool("walking", true);
+            }
+            else if (targetDistance > chaseDistance)
+            {
+                animator.SetBool("walking", false);
+            }
+            else
+            {
+                stopChase();
 
-            
+
+            }
         }
+
+
+        
             
 
     }
@@ -105,10 +109,9 @@ public class FrankMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        beingDamaged = true;
         animator.SetBool("isDamaged?", true);
         Debug.Log("Enemy damaged");
-        beingDamaged = true;
-
     }
 
     public void AlertObservers(string message)
