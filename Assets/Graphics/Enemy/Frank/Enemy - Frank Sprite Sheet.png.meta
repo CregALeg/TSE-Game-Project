@@ -150,7 +150,7 @@ TextureImporter:
         serializedVersion: 2
         x: 24
         y: 245
-        width: 21
+        width: 23
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -171,7 +171,7 @@ TextureImporter:
         serializedVersion: 2
         x: 87
         y: 245
-        width: 21
+        width: 23
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -213,7 +213,7 @@ TextureImporter:
         serializedVersion: 2
         x: 215
         y: 245
-        width: 21
+        width: 23
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -234,7 +234,7 @@ TextureImporter:
         serializedVersion: 2
         x: 279
         y: 245
-        width: 21
+        width: 23
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -255,7 +255,7 @@ TextureImporter:
         serializedVersion: 2
         x: 342
         y: 245
-        width: 22
+        width: 23
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -295,9 +295,9 @@ TextureImporter:
       name: Enemy - Frank Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 79
+        x: 78
         y: 168
-        width: 22
+        width: 23
         height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -337,9 +337,9 @@ TextureImporter:
       name: Enemy - Frank Sprite Sheet_9
       rect:
         serializedVersion: 2
-        x: 13
+        x: 0
         y: 114
-        width: 38
+        width: 55
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -358,9 +358,9 @@ TextureImporter:
       name: Enemy - Frank Sprite Sheet_10
       rect:
         serializedVersion: 2
-        x: 69
-        y: 113
-        width: 37
+        x: 55
+        y: 112
+        width: 55
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -379,9 +379,9 @@ TextureImporter:
       name: Enemy - Frank Sprite Sheet_11
       rect:
         serializedVersion: 2
-        x: 133
+        x: 130
         y: 114
-        width: 29
+        width: 40
         height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

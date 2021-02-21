@@ -16,7 +16,6 @@ public class FrankMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     private void chasePlayer()
@@ -37,7 +36,9 @@ public class FrankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Health <= 0)
+        animator.SetBool("isDamaged?", false);
+
+        if (Health <= 0)
         {
             Destroy(gameObject);
             Debug.Log("Dead");
@@ -58,6 +59,7 @@ public class FrankMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        animator.SetBool("isDamaged?", true);
         Debug.Log("Damage Taken");
     }
 
