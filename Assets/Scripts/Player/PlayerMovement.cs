@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float attackRange;
     public LayerMask whatIsEnemy;
     public int damage;
-    public int heath;
+    public int health;
 
 
     // Start is called before the first frame update
@@ -43,7 +43,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(TimeBtwAttack <= 0)
+        if (health <= 0)
+        {
+            animator.SetBool("isDead", true);
+
+        }
+
+
+        if (TimeBtwAttack <= 0)
         {
             if (Input.GetMouseButton(0) && isAttacking == false)
             {
@@ -83,13 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void AlertObservers(string message)
-    {
-        if (message == "attackEnded");
-        {
-            isAttacking = false;
-        }
-    }
+    
 
     void Awake()
     {
@@ -112,5 +113,38 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    public void TakeDamage(int IncomingDamage)
+    {
+        health -= IncomingDamage;
+        animator.SetBool("isDamaged", true);
+        Debug.Log("Player damaged");
+    }
+
+    public void AlertObservers(string message)
+    {
+        if (message == "attackEnded")
+        {
+            isAttacking = false;
+        }
+    }
+
+
+    public void DamagedObservers(string message)
+    {
+        if (message == "damageEnded")
+        {
+            animator.SetBool("isDamaged", false);
+        }
+    }
+
+    public void DeadObservers(string message)
+    {
+        if (message == "Dead")
+        {
+
+            Destroy(gameObject);
+        }
     }
 }
