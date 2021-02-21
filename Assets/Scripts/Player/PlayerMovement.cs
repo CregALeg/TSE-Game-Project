@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(TimeBtwAttack <= 0)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && isAttacking == false)
             {
                 isAttacking = true;
                 if (vertical != 0 || horizontal != 0)

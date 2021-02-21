@@ -9,6 +9,7 @@ public class FrankMovement : MonoBehaviour
     public float stopDistance;
     public GameObject target;
     public float Health;
+    private bool Damaged;
 
     private float targetDistance;
     public Animator animator;
@@ -16,6 +17,8 @@ public class FrankMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator.SetBool("isDamaged?", false);
+        animator.SetBool("isDead", false);
     }
 
     private void chasePlayer()
@@ -36,12 +39,12 @@ public class FrankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("isDamaged?", false);
+        
 
         if (Health <= 0)
         {
-            Destroy(gameObject);
-            Debug.Log("Dead");
+            animator.SetBool("isDead", true);
+            
         }
 
 
@@ -60,7 +63,23 @@ public class FrankMovement : MonoBehaviour
     {
         Health -= damage;
         animator.SetBool("isDamaged?", true);
-        Debug.Log("Damage Taken");
+        
     }
 
+    public void AlertObservers(string message)
+    {
+        if (message == "damageEnded")
+        {
+            animator.SetBool("isDamaged?", false);
+        }
+    }
+
+    public void DeadObservers(string message)
+    {
+        if (message == "Dead")
+        {
+            
+            Destroy(gameObject);
+        }
+    }
 }
