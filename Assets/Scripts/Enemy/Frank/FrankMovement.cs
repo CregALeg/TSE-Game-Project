@@ -44,15 +44,11 @@ public class FrankMovement : MonoBehaviour
         animator.SetBool("walking", false);
         if (TimeBtwAttack <= 0)
         {
-            if (isAttacking == false && beingDamaged == false)
+            if (!isAttacking && !beingDamaged)
             {
                 isAttacking = true;
                 animator.SetBool("Attack", true);
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsPlayer);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<PlayerMovement>().TakeDamage(damage);
-                }
+                
                 TimeBtwAttack = startTimeBtwAttack;
 
             }
@@ -72,7 +68,7 @@ public class FrankMovement : MonoBehaviour
             animator.SetBool("isDead", true);
             
         }
-        else
+        else if(!isAttacking && !beingDamaged)
         {
             targetDistance = Vector2.Distance(transform.position, target.transform.position);
             if (targetDistance < chaseDistance && targetDistance > stopDistance)
@@ -108,16 +104,30 @@ public class FrankMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Health -= damage;
-        beingDamaged = true;
-        animator.SetBool("isDamaged?", true);
-        Debug.Log("Enemy damaged");
+        if(beingDamaged)
+        {
+
+        }
+        else
+        {
+            Health -= damage;
+            beingDamaged = true;
+            isAttacking = false;
+            animator.SetBool("isDamaged?", true);
+            Debug.Log("Enemy damaged");
+        }
+       
     }
 
     public void AlertObservers(string message)
     {
         if (message == "attackEnded")
         {
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsPlayer);
+            for (int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                enemiesToDamage[i].GetComponent<PlayerMovement>().TakeDamage(damage);
+            }
             animator.SetBool("Attack", false);
             isAttacking = false; 
         }
@@ -129,6 +139,7 @@ public class FrankMovement : MonoBehaviour
         {
             animator.SetBool("isDamaged?", false);
             beingDamaged = false;
+
         }
     }
 
@@ -136,7 +147,8 @@ public class FrankMovement : MonoBehaviour
     {
         if (message == "Dead")
         {
-            
+            beingDamaged = false;
+            isAttacking = false;
             Destroy(gameObject);
         }
     }

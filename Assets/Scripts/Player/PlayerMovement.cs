@@ -19,12 +19,15 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsEnemy;
     public int damage;
     public int health;
+    private bool isDamage;
+    private bool dead;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        isDamage = false;
+        dead = false;
     }
 
     // Update is called once per frame
@@ -46,13 +49,14 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
             animator.SetBool("isDead", true);
+            dead = true;
 
         }
 
 
         if (TimeBtwAttack <= 0)
         {
-            if (Input.GetMouseButton(0) && isAttacking == false)
+            if (Input.GetMouseButton(0) && !isAttacking && !isDamage && !dead)
             {
                 isAttacking = true;
                 if (vertical != 0 || horizontal != 0)
@@ -63,12 +67,7 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
 
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
-
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
-                }
+               
                 animator.SetTrigger("lightAttack");
                 TimeBtwAttack = startTimeBtwAttack;
             }
@@ -79,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        if(!isAttacking)
+        if(!isAttacking && !isDamage && !dead)
         {
             Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
             transform.position = transform.position + movement * Time.deltaTime;
@@ -117,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int IncomingDamage)
     {
+        isDamage = true;
+        isAttacking = false;
         health -= IncomingDamage;
         animator.SetBool("isDamaged", true);
         Debug.Log("Player damaged");
@@ -126,6 +127,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+
+            for (int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
+            }
             isAttacking = false;
         }
     }
@@ -136,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
         if (message == "damageEnded")
         {
             animator.SetBool("isDamaged", false);
+            isDamage = false;
         }
     }
 
