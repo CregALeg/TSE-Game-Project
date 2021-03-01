@@ -70,9 +70,11 @@ public class FrankMovement : MonoBehaviour
         }
         else if(!isAttacking && !beingDamaged)
         {
+
             targetDistance = Vector2.Distance(transform.position, target.transform.position);
             if (targetDistance < chaseDistance && targetDistance > stopDistance)
             {
+
                 chasePlayer();
                 animator.SetBool("walking", true);
             }
@@ -82,6 +84,7 @@ public class FrankMovement : MonoBehaviour
             }
             else
             {
+
                 stopChase();
 
 
