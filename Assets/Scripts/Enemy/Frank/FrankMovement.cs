@@ -7,7 +7,7 @@ public class FrankMovement : MonoBehaviour
     public float speed;
     public float chaseDistance;
     public float stopDistance;
-    public GameObject target;
+    public Transform target;
     public float Health;
 
     bool isAttacking;
@@ -26,12 +26,12 @@ public class FrankMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.Find("Player 1").GetComponent<Transform>();
     }
 
     private void chasePlayer()
     {
-        if (transform.position.x < target.transform.position.x)
+        if (transform.position.x < target.position.x)
             GetComponent<SpriteRenderer>().flipX = false;
         else
             GetComponent<SpriteRenderer>().flipX = true;
@@ -71,7 +71,7 @@ public class FrankMovement : MonoBehaviour
         else if(!isAttacking && !beingDamaged)
         {
 
-            targetDistance = Vector2.Distance(transform.position, target.transform.position);
+            targetDistance = Vector2.Distance(transform.position, target.position);
             if (targetDistance < chaseDistance && targetDistance > stopDistance)
             {
 
