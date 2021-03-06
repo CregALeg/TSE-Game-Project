@@ -14,7 +14,8 @@ public class FrankMovement : MonoBehaviour
     float TimeBtwAttack;
     public float startTimeBtwAttack;
     public Transform attackPos;
-    public float attackRange;
+    public float attackRangeX;
+    public float attackRangeY;
     public LayerMask whatIsPlayer;
     private bool beingDamaged;
 
@@ -101,7 +102,7 @@ public class FrankMovement : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireCube(attackPos.position, new Vector2(attackRangeX, attackRangeY));
     }
 
 
@@ -126,7 +127,7 @@ public class FrankMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
-            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsPlayer);
+            Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsPlayer);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<PlayerMovement>().TakeDamage(damage);
