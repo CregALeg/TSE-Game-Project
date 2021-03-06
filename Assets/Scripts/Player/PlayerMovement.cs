@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public int health;
     private bool isDamage;
     private bool dead;
+    public Transform attackPos1;
+    public Transform attackPos2;
 
 
     // Start is called before the first frame update
@@ -80,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(!isAttacking && !isDamage && !dead)
         {
+
             Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
             transform.position = transform.position + movement * Time.deltaTime;
             ChangeDirection(horizontal);
@@ -110,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     public void TakeDamage(int IncomingDamage)
@@ -128,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         if (message == "attackEnded")
         {
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+            
 
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
