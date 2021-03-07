@@ -20,7 +20,6 @@ public class FrankMovement : MonoBehaviour
     private bool beingDamaged;
     private bool direction;
     public int damage;
-
     private float targetDistance;
     public Animator animator;
 
@@ -33,16 +32,16 @@ public class FrankMovement : MonoBehaviour
 
     private void chasePlayer()
     {
-        if (transform.position.x < target.position.x)
+        Vector2 scale = transform.localScale;
+        if (transform.position.x < target.position.x && direction == false)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+           
             direction = true;
         }
 
-        else if(direction == true)
+        else if(direction == true && transform.position.x > target.position.x)
         {
-            direction = !direction;
-            Vector2 scale = transform.localScale;
+            direction = false;
             scale.x *= -1;
             transform.localScale = scale;
         }
