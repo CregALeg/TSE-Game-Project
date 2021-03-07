@@ -23,29 +23,26 @@ public class FrankMovement : MonoBehaviour
     private float targetDistance;
     public Animator animator;
 
+    public float flipDistance;
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Player 1").GetComponent<Transform>();
-        direction = true;
+
     }
 
     private void chasePlayer()
     {
-        Vector2 scale = transform.localScale;
-        if (transform.position.x < target.position.x && direction == false)
+        if (flipDistance > 0 && !direction || flipDistance < 0 && direction)
         {
-           
-            direction = true;
-        }
-
-        else if(direction == true && transform.position.x > target.position.x)
-        {
-            direction = false;
+            direction = !direction;
+            Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
         }
-           
+
+
 
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
@@ -73,6 +70,7 @@ public class FrankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        flipDistance = transform.position.x - target.position.x;
 
         if (Health <= 0)
         {
