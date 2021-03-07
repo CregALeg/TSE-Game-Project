@@ -553,11 +553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2126670424464202414, guid: 4e480f4b9be4e4546ad62c9a1a29fc59, type: 3}
       propertyPath: attackRangeX
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2126670424464202414, guid: 4e480f4b9be4e4546ad62c9a1a29fc59, type: 3}
       propertyPath: attackRangeY
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2126670424464202414, guid: 4e480f4b9be4e4546ad62c9a1a29fc59, type: 3}
       propertyPath: stopDistance

@@ -18,7 +18,7 @@ public class FrankMovement : MonoBehaviour
     public float attackRangeY;
     public LayerMask whatIsPlayer;
     private bool beingDamaged;
-
+    private bool direction;
     public int damage;
 
     private float targetDistance;
@@ -28,14 +28,25 @@ public class FrankMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player 1").GetComponent<Transform>();
+        direction = true;
     }
 
     private void chasePlayer()
     {
         if (transform.position.x < target.position.x)
+        {
             GetComponent<SpriteRenderer>().flipX = false;
-        else
-            GetComponent<SpriteRenderer>().flipX = true;
+            direction = true;
+        }
+
+        else if(direction == true)
+        {
+            direction = !direction;
+            Vector2 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
+           
 
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
