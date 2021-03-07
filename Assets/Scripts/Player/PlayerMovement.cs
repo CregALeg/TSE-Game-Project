@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         if (message == "attackEnded")
         {
             Debug.Log("Attacking");
-            Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0,whatIsEnemy);
+            Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);

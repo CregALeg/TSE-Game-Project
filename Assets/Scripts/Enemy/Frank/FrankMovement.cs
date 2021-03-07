@@ -7,7 +7,7 @@ public class FrankMovement : MonoBehaviour
     public float speed;
     public float chaseDistance;
     public float stopDistance;
-    public Transform target;
+    private Transform target;
     public float Health;
 
     bool isAttacking;
@@ -127,9 +127,11 @@ public class FrankMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
+            Debug.Log("Enemy attack");
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsPlayer);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
+                Debug.Log("Player found");
                 enemiesToDamage[i].GetComponent<PlayerMovement>().TakeDamage(damage);
             }
             animator.SetBool("Attack", false);
