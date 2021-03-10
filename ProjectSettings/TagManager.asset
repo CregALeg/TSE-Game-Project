@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BackGround
   - Water
   - UI
   - Enemy
@@ -45,7 +45,7 @@ TagManager:
   - name: Background
     uniqueID: 3955064531
     locked: 0
-  - name: Enemy
+  - name: Game
     uniqueID: 1834563467
     locked: 0
   - name: Player

@@ -9,7 +9,7 @@ public class FrankMovement : MonoBehaviour
     public float stopDistance;
     private Transform target;
     public float Health;
-
+    private SpriteRenderer layerOrder;
     bool isAttacking;
     float TimeBtwAttack;
     public float startTimeBtwAttack;
@@ -83,6 +83,10 @@ public class FrankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        layerOrder = GetComponent<SpriteRenderer>();
+        layerOrder.sortingOrder = (int) transform.position.y * -1;
+
         flipDistance = transform.position.x - target.position.x;
 
         if (Health <= 0)

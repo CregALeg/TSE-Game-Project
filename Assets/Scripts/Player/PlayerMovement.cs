@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDamage;
     private bool dead;
     private int comboCount;
-    public float thrust;
+    private SpriteRenderer layerOrder;
 
 
     // Start is called before the first frame update
@@ -37,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        layerOrder = GetComponent<SpriteRenderer>();
+        layerOrder.sortingOrder = (int)transform.position.y * -1;
+
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 

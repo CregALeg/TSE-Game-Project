@@ -178,7 +178,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 4121725111451969963}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  chaseDistance: 20
+  chaseDistance: 40
   stopDistance: 4
   Health: 3
   startTimeBtwAttack: 3
