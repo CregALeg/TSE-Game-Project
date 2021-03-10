@@ -624,6 +624,22 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6279872685826664118, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279872685826664118, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279872685826664118, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279872685826664118, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6279872685826664120, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
       propertyPath: m_Size.x
       value: 1.1662371
@@ -646,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6279872685826664120, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6279872685826664121, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
       propertyPath: m_Name
