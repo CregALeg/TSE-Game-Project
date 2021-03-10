@@ -23,12 +23,14 @@ public class FrankMovement : MonoBehaviour
     private float targetDistance;
     public Animator animator;
 
+    public bool facingRight;
     public float flipDistance;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Player 1").GetComponent<Transform>();
+        facingRight = true;
 
     }
 
@@ -36,10 +38,21 @@ public class FrankMovement : MonoBehaviour
     {
         if (flipDistance > 0 && !direction || flipDistance < 0 && direction)
         {
+            
             direction = !direction;
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
+            if(facingRight == true)
+            {
+                Debug.Log("Facing Left");
+                facingRight = false;
+            }
+            else
+            {
+                Debug.Log("Facing Right");
+                facingRight = true;
+            }
         }
 
 
@@ -74,6 +87,7 @@ public class FrankMovement : MonoBehaviour
 
         if (Health <= 0)
         {
+
             animator.SetBool("isDead", true);
             
         }
@@ -127,6 +141,15 @@ public class FrankMovement : MonoBehaviour
             isAttacking = false;
             animator.SetBool("isDamaged?", true);
             Debug.Log("Enemy damaged");
+
+            if (facingRight == true)
+            {
+                this.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 15);
+            }
+            else
+            {
+                this.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 15);
+            }
         }
        
     }
@@ -153,6 +176,7 @@ public class FrankMovement : MonoBehaviour
         {
             animator.SetBool("isDamaged?", false);
             beingDamaged = false;
+            
 
         }
     }

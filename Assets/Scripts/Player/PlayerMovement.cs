@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public int health;
     private bool isDamage;
     private bool dead;
+    private int comboCount;
+    public float thrust;
 
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isDamage = false;
         dead = false;
+        comboCount = 0;
     }
 
     // Update is called once per frame
@@ -68,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
 
-               
+                comboCount++;
+                animator.SetInteger("comboCount", comboCount);
                 animator.SetTrigger("lightAttack");
                 TimeBtwAttack = startTimeBtwAttack;
             }
@@ -129,13 +133,30 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
-            Debug.Log("Attacking");
+            Debug.Log("Combo done");
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
-                enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
+                if(comboCount == 3)
+                {
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2);
+                    
+                }
+                else
+                {
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
+                }
+
+                
+                
+            }
+            if (comboCount == 3)
+            {
+                comboCount = 0;
+                Debug.Log("Combo done");
             }
             isAttacking = false;
+
         }
     }
 
