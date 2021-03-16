@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 752ce552778348e4da9fc0734419179c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6296181898924817932
+    second: Enemy - Gary Sprite Sheet_0
+  - first:
+      213: -1372947950995866361
+    second: Enemy - Gary Sprite Sheet_1
+  - first:
+      213: -2290433541034157292
+    second: Enemy - Gary Sprite Sheet_2
+  - first:
+      213: -9164872755999603651
+    second: Enemy - Gary Sprite Sheet_3
+  - first:
+      213: 7288052275567130824
+    second: Enemy - Gary Sprite Sheet_4
+  - first:
+      213: 2786408058906320089
+    second: Enemy - Gary Sprite Sheet_5
+  - first:
+      213: 2308966970043757890
+    second: Enemy - Gary Sprite Sheet_6
+  - first:
+      213: -7236704719897204158
+    second: Enemy - Gary Sprite Sheet_7
+  - first:
+      213: 8250525719493031329
+    second: Enemy - Gary Sprite Sheet_8
+  - first:
+      213: -3437485324734630887
+    second: Enemy - Gary Sprite Sheet_9
+  - first:
+      213: -5582083537651807760
+    second: Enemy - Gary Sprite Sheet_10
+  - first:
+      213: -465326629974553303
+    second: Enemy - Gary Sprite Sheet_11
+  - first:
+      213: -3568663889146446075
+    second: Enemy - Gary Sprite Sheet_12
+  - first:
+      213: -4643988195853616334
+    second: Enemy - Gary Sprite Sheet_13
+  - first:
+      213: -6066993272840265260
+    second: Enemy - Gary Sprite Sheet_14
+  - first:
+      213: -5184613283785379796
+    second: Enemy - Gary Sprite Sheet_15
+  - first:
+      213: -2994117745590688374
+    second: Enemy - Gary Sprite Sheet_16
+  - first:
+      213: -2779825380339466693
+    second: Enemy - Gary Sprite Sheet_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +86,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +95,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +129,471 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 245
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f18759ebe77f98a0800000000000000
+      internalID: -6296181898924817932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 245
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d7acddc1f42fce0800000000000000
+      internalID: -1372947950995866361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 245
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bd40564deb630e0800000000000000
+      internalID: -2290433541034157292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 245
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d340df639c4dfc080800000000000000
+      internalID: -9164872755999603651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 245
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8f7ad4eec542560800000000000000
+      internalID: 7288052275567130824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 245
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc9566dd5f4ba620800000000000000
+      internalID: 2786408058906320089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 168
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245719fc9391b0020800000000000000
+      internalID: 2308966970043757890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 168
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a6222266f029b90800000000000000
+      internalID: -7236704719897204158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 168
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a53b90cd61cf7270800000000000000
+      internalID: 8250525719493031329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 114
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914f29a4f499b40d0800000000000000
+      internalID: -3437485324734630887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 113
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f945bff8947882b0800000000000000
+      internalID: -5582083537651807760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 114
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d46db35e3da89f0800000000000000
+      internalID: -465326629974553303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 113
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f79a4b91f897ec0800000000000000
+      internalID: -3568663889146446075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 113
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bb90d375d3d8fb0800000000000000
+      internalID: -4643988195853616334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 41
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1ebad33c5bdcba0800000000000000
+      internalID: -6066993272840265260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 46
+        width: 53
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20733a00bd8c08b0800000000000000
+      internalID: -5184613283785379796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 46
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85af5e16c1c276d0800000000000000
+      internalID: -2994117745590688374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy - Gary Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 46
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e30437b831c69d0800000000000000
+      internalID: -2779825380339466693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
