@@ -7,43 +7,43 @@ public class FrankMovement : MonoBehaviour
     public float speed;
     public float chaseDistance;
     public float stopDistance;
-    private Transform target;
+    protected Transform target;
     public float Health;
-    private SpriteRenderer layerOrder;
-    bool isAttacking;
-    float TimeBtwAttack;
+    protected SpriteRenderer layerOrder;
+    protected bool isAttacking;
+    protected float TimeBtwAttack;
     public float startTimeBtwAttack;
     public Transform attackPos;
     public float attackRangeX;
     public float attackRangeY;
     public LayerMask whatIsPlayer;
-    private bool beingDamaged;
-    private bool direction;
+    protected bool beingDamaged;
+    protected bool direction;
     public int damage;
-    private float targetDistance;
+    protected float targetDistance;
     public Animator animator;
-
+    public int tokenValue;
     public bool facingRight;
     public float flipDistance;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         target = GameObject.Find("Player 1").GetComponent<Transform>();
         facingRight = true;
 
     }
 
-    private void chasePlayer()
+    protected virtual void chasePlayer()
     {
         if (flipDistance > 0 && !direction || flipDistance < 0 && direction)
         {
-            
+
             direction = !direction;
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
-            if(facingRight == true)
+            if (facingRight == true)
             {
                 Debug.Log("Facing Left");
                 facingRight = false;
@@ -60,7 +60,7 @@ public class FrankMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
-    private void stopChase()
+    protected virtual void stopChase()
     {
         animator.SetBool("walking", false);
         if (TimeBtwAttack <= 0)
@@ -69,7 +69,7 @@ public class FrankMovement : MonoBehaviour
             {
                 isAttacking = true;
                 animator.SetBool("Attack", true);
-                
+
                 TimeBtwAttack = startTimeBtwAttack;
 
             }
@@ -84,8 +84,14 @@ public class FrankMovement : MonoBehaviour
     void Update()
     {
 
+        movementManager();
+
+    }
+
+    protected virtual void movementManager()
+    {
         layerOrder = GetComponent<SpriteRenderer>();
-        layerOrder.sortingOrder = (int) transform.position.y * -1;
+        layerOrder.sortingOrder = (int)transform.position.y * -1;
 
         flipDistance = transform.position.x - target.position.x;
 
@@ -93,9 +99,9 @@ public class FrankMovement : MonoBehaviour
         {
 
             animator.SetBool("isDead", true);
-            
+
         }
-        else if(!isAttacking && !beingDamaged)
+        else if (!isAttacking && !beingDamaged)
         {
 
             targetDistance = Vector2.Distance(transform.position, target.position);
@@ -117,13 +123,7 @@ public class FrankMovement : MonoBehaviour
 
             }
         }
-
-
-        
-            
-
     }
-
 
     private void OnDrawGizmosSelected()
     {
@@ -195,4 +195,6 @@ public class FrankMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+ 
 }

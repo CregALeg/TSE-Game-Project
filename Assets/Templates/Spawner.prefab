@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b1d6876244adc429c63a9f4bb6879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTokens: 1
+  spawnTokens: 5
   spawnPool:
   - {fileID: 4121725111451969963, guid: 4e480f4b9be4e4546ad62c9a1a29fc59, type: 3}
+  - {fileID: 5325718925140591185, guid: 851ce09a82bdf9b4bb8fe314affaee39, type: 3}
   quad: {fileID: 1750350804089608008}
   spawnTime: 1
   spawnDelay: 3
+  spawnNum: 0
 --- !u!1 &1750350804089608008
 GameObject:
   m_ObjectHideFlags: 0

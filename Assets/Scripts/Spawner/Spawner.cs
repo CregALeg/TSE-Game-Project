@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     public GameObject quad;
     public float spawnTime;
     public float spawnDelay;
+    public int spawnNum;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class Spawner : MonoBehaviour
 
     void spawnEnemy()
     {
+        
         if(spawnTokens <= 0)
         {
             CancelInvoke("spawnEnemy");
@@ -38,7 +41,11 @@ public class Spawner : MonoBehaviour
 
             float spawnGridX, spawnGridY;
             Vector2 pos;
-            toSpawn = spawnPool[0];
+
+
+            spawnNum = Random.Range(0, spawnPool.Count);
+
+            toSpawn = spawnPool[spawnNum];
 
 
             spawnGridX = Random.Range(c.bounds.min.x, c.bounds.max.x);
@@ -48,7 +55,7 @@ public class Spawner : MonoBehaviour
             //Instantiate(toSpawn, pos, toSpawn.transform.rotation);
             Instantiate(toSpawn, transform.position, transform.rotation);
 
-            spawnTokens--;
+            spawnTokens = spawnTokens - (spawnNum + 1);
         }
         
 
