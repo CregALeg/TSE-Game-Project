@@ -159,7 +159,7 @@ public class FrankMovement : MonoBehaviour
        
     }
 
-    public void AlertObservers(string message)
+    public virtual void AlertObservers(string message)
     {
         if (message == "attackEnded")
         {

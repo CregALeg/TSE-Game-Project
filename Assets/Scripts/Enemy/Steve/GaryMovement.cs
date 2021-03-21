@@ -36,5 +36,22 @@ public class GaryMovement : FrankMovement
         }
     }
 
+    public override void AlertObservers(string message)
+    {
+        if (message == "attackEnded")
+        {
+            Debug.Log("Enemy attack");
+            Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsPlayer);
+            for (int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                Debug.Log("Player found");
+                enemiesToDamage[i].GetComponent<PlayerMovement>().TakeDamage(damage);
+            }
+            animator.SetBool("lightAttack", false);
+            animator.SetBool("heavyAttack", false);
+            isAttacking = false;
+        }
+    }
+
 
 }
