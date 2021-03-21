@@ -134,6 +134,7 @@ public class FrankMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log("Being damaged");
         if(beingDamaged)
         {
 
