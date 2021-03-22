@@ -134,10 +134,10 @@ public class FrankMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Being damaged");
+        Debug.Log("Being damaged1 ");
         if(beingDamaged)
         {
-
+            Debug.Log("Being damaged2 ");
         }
         else
         {

@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private bool dead;
     private int comboCount;
     private SpriteRenderer layerOrder;
+    public AudioSource death;
+    public AudioClip sound;
 
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         isDamage = false;
         dead = false;
         comboCount = 0;
+        death = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
             animator.SetBool("isDead", true);
+            death.PlayOneShot(sound);
             dead = true;
 
         }
@@ -136,10 +140,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
-            Debug.Log("Combo done");
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
+                Debug.Log("enemy found");
                 if(comboCount == 3)
                 {
                     enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2);
@@ -177,7 +181,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "Dead")
         {
-
             Destroy(gameObject);
         }
     }
