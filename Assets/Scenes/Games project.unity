@@ -136,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnDelay
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043690, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: m_RootOrder
@@ -458,11 +458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnDelay
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043690, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: m_RootOrder
@@ -523,11 +523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnDelay
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043690, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: m_RootOrder
@@ -689,11 +689,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnDelay
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043669, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1750350803580043690, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: m_RootOrder

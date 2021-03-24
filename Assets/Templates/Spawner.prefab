@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 143717948140166082, guid: 6ecfe7b88a64b4843afc7cb299525193, type: 3}
   quad: {fileID: 1750350804089608008}
   spawnTime: 1
-  spawnDelay: 3
+  spawnDelay: 7
   spawnNum: 0
 --- !u!1 &1750350804089608008
 GameObject:
