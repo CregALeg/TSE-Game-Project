@@ -172,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "damageEnded")
         {
+            GameControl.health -= 1;
             animator.SetBool("isDamaged", false);
             isDamage = false;
         }
