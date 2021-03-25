@@ -10,14 +10,14 @@ public class Spawner : MonoBehaviour
     public float spawnTime;
     public float spawnDelay;
     public int spawnNum;
-    
+    private int tempToken;
 
     // Start is called before the first frame update
     void Start()
     {
 
         InvokeRepeating("spawnEnemy", spawnTime, spawnDelay);
-
+        
     }
 
     // Update is called once per frame
@@ -29,8 +29,8 @@ public class Spawner : MonoBehaviour
 
     void spawnEnemy()
     {
-        
-        if(spawnTokens <= 0)
+        tempToken = spawnTokens;
+        if (spawnTokens <= 0)
         {
             CancelInvoke("spawnEnemy");
         }
@@ -42,9 +42,12 @@ public class Spawner : MonoBehaviour
             float spawnGridX, spawnGridY;
             Vector2 pos;
 
-
-            spawnNum = Random.Range(0, spawnPool.Count);
-
+            while (tempToken < 0)
+            {
+                spawnNum = Random.Range(0, spawnPool.Count);
+                tempToken = spawnTokens - (spawnNum + 1);
+            }
+                
             toSpawn = spawnPool[spawnNum];
 
 
