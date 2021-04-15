@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer layerOrder;
     public AudioSource death;
     public AudioClip sound;
+    private bool kick;
 
 
     // Start is called before the first frame update
@@ -70,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetMouseButton(0) && !isAttacking && !isDamage && !dead)
             {
                 isAttacking = true;
+                kick = false;
                 if (vertical != 0 || horizontal != 0)
                 {
                     vertical = 0;
@@ -81,6 +83,24 @@ public class PlayerMovement : MonoBehaviour
                 comboCount++;
                 animator.SetInteger("comboCount", comboCount);
                 animator.SetTrigger("lightAttack");
+                TimeBtwAttack = startTimeBtwAttack;
+            }
+
+            else if (Input.GetMouseButton(1) && !isAttacking && !isDamage && !dead)
+            {
+                isAttacking = true;
+                kick = true;
+                if (vertical != 0 || horizontal != 0)
+                {
+                    vertical = 0;
+                    horizontal = 0;
+                    animator.SetFloat("Speed", 0);
+
+                }
+
+                comboCount++;
+                animator.SetInteger("comboCount", comboCount);
+                animator.SetTrigger("heavyAttack");
                 TimeBtwAttack = startTimeBtwAttack;
             }
         }
@@ -145,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
                 Debug.Log("enemy found");
-                if(comboCount == 3)
+                if(comboCount == 3 || kick == true)
                 {
                     enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2);
                     
