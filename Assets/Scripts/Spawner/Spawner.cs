@@ -13,19 +13,25 @@ public class Spawner : MonoBehaviour
     private int spawnNum;
     private int tempToken;
     private int spawnLocations;
+    public int spawned;
+    public GameObject SceneChanger;
 
     // Start is called before the first frame update
     void Start()
     {
 
         InvokeRepeating("spawnEnemy", spawnTime, spawnDelay);
+        spawned = 0;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(spawnTokens <= 0 && spawned == 0)
+        {
+            SceneChanger.active = true;
+        }
 
     }
 
@@ -49,6 +55,9 @@ public class Spawner : MonoBehaviour
             Instantiate(toSpawn, c.position, c.rotation);
 
             spawnTokens = spawnTokens - (spawnNum + 1);
+
+            spawned = spawned + 1;
+
         }
         
 

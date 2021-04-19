@@ -25,6 +25,7 @@ public class FrankMovement : MonoBehaviour
     public int tokenValue;
     public bool facingRight;
     public float flipDistance;
+  
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -132,7 +133,7 @@ public class FrankMovement : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         Debug.Log("Being damaged1 ");
         if(beingDamaged)
@@ -190,6 +191,7 @@ public class FrankMovement : MonoBehaviour
     {
         if (message == "Dead")
         {
+            GameObject.Find("Spawner").GetComponent<Spawner>().spawned -= 1;
             beingDamaged = false;
             isAttacking = false;
             Destroy(gameObject);
