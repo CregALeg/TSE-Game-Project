@@ -195,7 +195,13 @@ public class FrankMovement : MonoBehaviour
             GameObject.Find("Spawner").GetComponent<Spawner>().spawned -= 1;
             beingDamaged = false;
             isAttacking = false;
-            Instantiate(DropOnDeath, transform.position, transform.rotation);
+            int ifDrop = Random.Range(0, 4);
+            Debug.Log(ifDrop);
+            if(ifDrop == 1)
+            {
+                Instantiate(DropOnDeath, transform.position, transform.rotation);
+            }
+            
             Destroy(gameObject);
 
         }

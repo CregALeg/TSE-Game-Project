@@ -8,7 +8,7 @@ public class HealthBoost : MonoBehaviour
     void OnTriggerEnter2D(Collider2D playercollision)
     {
         //GameControl.health += 1;
-        GameObject.Find("Player 1").GetComponent<PlayerMovement>().health += 1;
+        GameObject.Find("Player 1").GetComponent<PlayerMovement>().health += 5;
         Destroy(gameObject);
     }
 
