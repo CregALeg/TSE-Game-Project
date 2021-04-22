@@ -25,6 +25,7 @@ public class FrankMovement : MonoBehaviour
     public int tokenValue;
     public bool facingRight;
     public float flipDistance;
+    public GameObject DropOnDeath;
   
 
     // Start is called before the first frame update
@@ -194,7 +195,9 @@ public class FrankMovement : MonoBehaviour
             GameObject.Find("Spawner").GetComponent<Spawner>().spawned -= 1;
             beingDamaged = false;
             isAttacking = false;
+            Instantiate(DropOnDeath, transform.position, transform.rotation);
             Destroy(gameObject);
+
         }
     }
 

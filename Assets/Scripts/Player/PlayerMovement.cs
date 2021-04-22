@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource death;
     public AudioClip sound;
     private bool kick;
+    public float DamageMulit; 
 
 
     // Start is called before the first frame update
@@ -58,6 +59,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if (health > 5)
+        {
+            health = 5;
+        }
+
         if (health < 1)
         {
             animator.SetBool("isDead", true);
@@ -153,7 +160,6 @@ public class PlayerMovement : MonoBehaviour
         isDamage = true;
         isAttacking = false;
         health -= IncomingDamage;
-        //GameControl.health -= IncomingDamage;
         animator.SetBool("isDamaged", true);
         Debug.Log("Player damaged");
     }

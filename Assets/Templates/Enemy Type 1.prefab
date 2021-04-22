@@ -214,8 +214,10 @@ MonoBehaviour:
     m_Bits: 128
   damage: 1
   animator: {fileID: 4121725111451969967}
+  tokenValue: 0
   facingRight: 0
   flipDistance: 0
+  DropOnDeath: {fileID: 8182236692304497668, guid: 9c235bb3b11d79446987e4f74f664e1e, type: 3}
 --- !u!61 &4121725111451969964
 BoxCollider2D:
   m_ObjectHideFlags: 0

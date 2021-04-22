@@ -211,3 +211,4 @@ MonoBehaviour:
   tokenValue: 0
   facingRight: 0
   flipDistance: 0
+  DropOnDeath: {fileID: 8182236692304497668, guid: 9c235bb3b11d79446987e4f74f664e1e, type: 3}
