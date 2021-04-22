@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameControl : MonoBehaviour
 {
-    public GameObject heart1, heart2, heart3, heart4, heart5, gameOver;
+    public GameObject heart1, heart2, heart3, heart4, heart5, gameOver, damageBottle, speedBottle;
     public static int health;
+    public bool SB;
+    public bool DB;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class GameControl : MonoBehaviour
         heart4.gameObject.SetActive(true);
         heart5.gameObject.SetActive(true);
         gameOver.gameObject.SetActive(false);
+        damageBottle.SetActive(false);
+        speedBottle.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +28,24 @@ public class GameControl : MonoBehaviour
         
         if (health > 3)
             health = 3;
+
+        if (DB == true)
+        {
+            damageBottle.SetActive(true);
+        }
+        else
+        {
+            damageBottle.SetActive(false);
+        }
+
+        if (SB == true)
+        {
+            speedBottle.SetActive(true);
+        }
+        else
+        {
+            speedBottle.SetActive(false);
+        }
 
         health = GameObject.Find("Player 1").GetComponent<PlayerMovement>().health;
 

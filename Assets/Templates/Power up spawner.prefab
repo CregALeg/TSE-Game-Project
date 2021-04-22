@@ -145,7 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTokens: 1
   spawnPool:
-  - {fileID: 8182236692304497668, guid: 9c235bb3b11d79446987e4f74f664e1e, type: 3}
+  - {fileID: 4260433569298258844, guid: 5c9f35c2f94f60241aef36daed86357f, type: 3}
+  - {fileID: 4871091337548004160, guid: 82b40ba96a3326a46bf2f4ff6cefc9e2, type: 3}
   quads:
   - {fileID: 8649591251403779990}
   - {fileID: 8649591251627902354}
@@ -153,6 +154,8 @@ MonoBehaviour:
   - {fileID: 8649591249923611156}
   spawnTime: 1
   spawnDelay: 3
+  spawned: 0
+  SceneChanger: {fileID: 0}
 --- !u!1 &8649591251403779990
 GameObject:
   m_ObjectHideFlags: 0

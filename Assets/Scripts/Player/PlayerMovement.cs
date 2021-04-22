@@ -28,16 +28,28 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource death;
     public AudioClip sound;
     private bool kick;
-    public float DamageMulit; 
+    public int DamageMulit;
+    private float boostTimerS;
+    private float boostTimerD;
+    public bool speedBoosting;
+    public bool damageBoosting;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("Health") != 0 || health != 5)
+        {
+            health = PlayerPrefs.GetInt("Health");
+        }
         isDamage = false;
         dead = false;
         comboCount = 0;
+        DamageMulit = 1;
         death = GetComponent<AudioSource>();
+
+ 
+        
     }
 
     // Update is called once per frame
@@ -59,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        PlayerPrefs.SetInt("Health", health);
 
         if (health > 5)
         {
@@ -71,6 +84,30 @@ public class PlayerMovement : MonoBehaviour
             death.PlayOneShot(sound);
             dead = true;
 
+        }
+
+        if (speedBoosting)
+        {
+            boostTimerS += Time.deltaTime;
+            if (boostTimerS >= 10)
+            {
+                Speed = 10;
+                boostTimerS = 0;
+                speedBoosting = false;
+                GameObject.Find("GameControl").GetComponent<GameControl>().SB = false;
+            }
+        }
+
+        if (damageBoosting)
+        {
+            boostTimerD += Time.deltaTime;
+            if (boostTimerD >= 10)
+            {
+                DamageMulit = 1;
+                boostTimerD = 0;
+                damageBoosting = false;
+                GameObject.Find("GameControl").GetComponent<GameControl>().DB = false;
+            }
         }
 
 
@@ -174,12 +211,12 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("enemy found");
                 if(comboCount == 3 || kick == true)
                 {
-                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2);
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2 * DamageMulit);
                     
                 }
                 else
                 {
-                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * DamageMulit);
                 }
 
                 
