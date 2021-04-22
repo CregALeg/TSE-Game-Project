@@ -10,4 +10,9 @@ public class starthandler : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNum);
     }
+
+    public void close()
+    {
+        Application.Quit();
+    }
 }

@@ -20,6 +20,7 @@ public class GameControl : MonoBehaviour
         gameOver.gameObject.SetActive(false);
         damageBottle.SetActive(false);
         speedBottle.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -98,7 +99,6 @@ public class GameControl : MonoBehaviour
                 heart3.gameObject.SetActive(false);
                 heart4.gameObject.SetActive(false);
                 heart5.gameObject.SetActive(false);
-                gameOver.gameObject.SetActive(true);
                 break;
         }
     }
