@@ -19,8 +19,11 @@ public class GameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (health > 3)
             health = 3;
+
+        health = GameObject.Find("Player 1").GetComponent<PlayerMovement>().health;
 
         switch (health)
         {

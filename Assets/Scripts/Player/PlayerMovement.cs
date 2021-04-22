@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (health <= 0)
+        if (health < 1)
         {
             animator.SetBool("isDead", true);
             death.PlayOneShot(sound);
@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         isDamage = true;
         isAttacking = false;
         health -= IncomingDamage;
-        GameControl.health -= IncomingDamage;
+        //GameControl.health -= IncomingDamage;
         animator.SetBool("isDamaged", true);
         Debug.Log("Player damaged");
     }

@@ -630,6 +630,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
+      propertyPath: spawnPool.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
 --- !u!1001 &1509472955
@@ -683,6 +687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6279872685826664117, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 59807a194abd54cebbc02aa96e74c5e7, type: 3}
     - target: {fileID: 6279872685826664121, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
       propertyPath: m_Name
       value: Player 1
