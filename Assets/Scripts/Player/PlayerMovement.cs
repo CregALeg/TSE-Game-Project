@@ -25,8 +25,11 @@ public class PlayerMovement : MonoBehaviour
     private bool dead;
     private int comboCount;
     private SpriteRenderer layerOrder;
-    public AudioSource death;
-    public AudioClip sound;
+    private AudioSource sound;
+    public AudioClip death;
+    public AudioClip walking;
+    public AudioClip punch;
+    public AudioClip powerup;
     private bool kick;
     public int DamageMulit;
     private float boostTimerS;
@@ -38,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("Health") != 0 || health != 5)
+        if (PlayerPrefs.GetInt("Health") > 0 || health != 5)
         {
             health = PlayerPrefs.GetInt("Health");
         }
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         dead = false;
         comboCount = 0;
         DamageMulit = 1;
-        death = GetComponent<AudioSource>();
+        
 
  
         
@@ -81,7 +84,8 @@ public class PlayerMovement : MonoBehaviour
         if (health < 1)
         {
             animator.SetBool("isDead", true);
-            death.PlayOneShot(sound);
+            sound = GetComponent<AudioSource>();
+            sound.PlayOneShot(death);
             dead = true;
 
         }
@@ -161,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
             transform.position = transform.position + movement * Time.deltaTime;
             ChangeDirection(horizontal);
+
         }
 
         
@@ -205,6 +210,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
+            sound = GetComponent<AudioSource>();
+            sound.volume = 0.1f;
+            sound.PlayOneShot(punch);
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
@@ -250,5 +258,19 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(0);
             Destroy(gameObject);
         }
+    }
+
+    public void walkObservers(string message)
+    {
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0.1f;
+        sound.PlayOneShot(walking);
+    }
+
+    public void powerPick()
+    {
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0.1f;
+        sound.PlayOneShot(powerup);
     }
 }

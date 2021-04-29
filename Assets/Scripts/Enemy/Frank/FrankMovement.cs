@@ -26,7 +26,12 @@ public class FrankMovement : MonoBehaviour
     public bool facingRight;
     public float flipDistance;
     public GameObject DropOnDeath;
-  
+    private AudioSource sound;
+    public AudioClip death;
+    public AudioClip walking;
+    public AudioClip punch;
+    public AudioClip powerup;
+
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -99,7 +104,8 @@ public class FrankMovement : MonoBehaviour
 
         if (Health <= 0)
         {
-
+            sound = GetComponent<AudioSource>();
+            sound.PlayOneShot(death);
             animator.SetBool("isDead", true);
 
         }
@@ -165,6 +171,9 @@ public class FrankMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
+            sound = GetComponent<AudioSource>();
+            sound.volume = 0.1f;
+            sound.PlayOneShot(punch);
             Debug.Log("Enemy attack");
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsPlayer);
             for (int i = 0; i < enemiesToDamage.Length; i++)
@@ -207,5 +216,12 @@ public class FrankMovement : MonoBehaviour
         }
     }
 
- 
+    public void walkObservers(string message)
+    {
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0.1f;
+        sound.PlayOneShot(walking);
+    }
+
+
 }

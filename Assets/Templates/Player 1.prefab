@@ -114,8 +114,13 @@ MonoBehaviour:
     m_Bits: 64
   damage: 1
   health: 5
-  death: {fileID: 0}
-  sound: {fileID: 8300000, guid: 59807a194abd54cebbc02aa96e74c5e7, type: 3}
+  death: {fileID: 8300000, guid: 59807a194abd54cebbc02aa96e74c5e7, type: 3}
+  walking: {fileID: 8300000, guid: 8dd485ce323e84b41acab44ed2359971, type: 3}
+  punch: {fileID: 8300000, guid: d28eeb5d1b28bd3439a454b3b27ee47f, type: 3}
+  powerup: {fileID: 8300000, guid: 05a1c9a404d99eb4ebab3f440c00437c, type: 3}
+  DamageMulit: 0
+  speedBoosting: 0
+  damageBoosting: 0
 --- !u!50 &6279872685826664118
 Rigidbody2D:
   serializedVersion: 4

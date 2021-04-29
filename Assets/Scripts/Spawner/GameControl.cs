@@ -8,9 +8,14 @@ public class GameControl : MonoBehaviour
     public static int health;
     public bool SB;
     public bool DB;
+    private AudioSource sound;
+    public AudioClip iDidntHearNoBell;
     // Start is called before the first frame update
     void Start()
     {
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0.2f;
+        sound.PlayOneShot(iDidntHearNoBell);
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
@@ -20,7 +25,8 @@ public class GameControl : MonoBehaviour
         gameOver.gameObject.SetActive(false);
         damageBottle.SetActive(false);
         speedBottle.SetActive(false);
-        
+
+
     }
 
     // Update is called once per frame
