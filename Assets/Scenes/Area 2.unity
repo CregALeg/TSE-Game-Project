@@ -306,7 +306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 742620813886968384, guid: 18e87bcdddb703b4eb4e94cd3b859f9c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 742620813886968384, guid: 18e87bcdddb703b4eb4e94cd3b859f9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -363,7 +363,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6279872685826664115, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6279872685826664115, guid: ac848ca63e4ebfb4b90b2b7967394928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -507,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852058430474764253, guid: 92bbad92312737b4fab22815576a5af6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2852058430474764253, guid: 92bbad92312737b4fab22815576a5af6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -560,7 +560,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8649591250744660248, guid: 925e8372a8824444d84d1e001cfeb879, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8649591250744660248, guid: 925e8372a8824444d84d1e001cfeb879, type: 3}
       propertyPath: m_LocalPosition.x
@@ -668,12 +668,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1203840923}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
+      propertyPath: spawnTime
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnDelay
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 6
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: SceneChanger
