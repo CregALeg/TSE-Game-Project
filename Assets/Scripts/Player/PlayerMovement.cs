@@ -25,18 +25,34 @@ public class PlayerMovement : MonoBehaviour
     private bool dead;
     private int comboCount;
     private SpriteRenderer layerOrder;
-    public AudioSource death;
-    public AudioClip sound;
+    private AudioSource sound;
+    public AudioClip death;
+    public AudioClip walking;
+    public AudioClip punch;
+    public AudioClip powerup;
     private bool kick;
+    public int DamageMulit;
+    private float boostTimerS;
+    private float boostTimerD;
+    public bool speedBoosting;
+    public bool damageBoosting;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("Health") > 0 || health != 5)
+        {
+            health = PlayerPrefs.GetInt("Health");
+        }
         isDamage = false;
         dead = false;
         comboCount = 0;
-        death = GetComponent<AudioSource>();
+        DamageMulit = 1;
+        
+
+ 
+        
     }
 
     // Update is called once per frame
@@ -58,12 +74,44 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (health <= 0)
+        PlayerPrefs.SetInt("Health", health);
+
+        if (health > 5)
+        {
+            health = 5;
+        }
+
+        if (health < 1)
         {
             animator.SetBool("isDead", true);
-            death.PlayOneShot(sound);
+            sound = GetComponent<AudioSource>();
+            sound.PlayOneShot(death);
             dead = true;
 
+        }
+
+        if (speedBoosting)
+        {
+            boostTimerS += Time.deltaTime;
+            if (boostTimerS >= 10)
+            {
+                Speed = 10;
+                boostTimerS = 0;
+                speedBoosting = false;
+                GameObject.Find("GameControl").GetComponent<GameControl>().SB = false;
+            }
+        }
+
+        if (damageBoosting)
+        {
+            boostTimerD += Time.deltaTime;
+            if (boostTimerD >= 10)
+            {
+                DamageMulit = 1;
+                boostTimerD = 0;
+                damageBoosting = false;
+                GameObject.Find("GameControl").GetComponent<GameControl>().DB = false;
+            }
         }
 
 
@@ -117,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 movement = new Vector3(horizontal * Speed, vertical * Speed, 0.0f);
             transform.position = transform.position + movement * Time.deltaTime;
             ChangeDirection(horizontal);
+
         }
 
         
@@ -153,7 +202,6 @@ public class PlayerMovement : MonoBehaviour
         isDamage = true;
         isAttacking = false;
         health -= IncomingDamage;
-        GameControl.health -= IncomingDamage;
         animator.SetBool("isDamaged", true);
         Debug.Log("Player damaged");
     }
@@ -162,18 +210,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if (message == "attackEnded")
         {
+            sound = GetComponent<AudioSource>();
+            sound.volume = 0.1f;
+            sound.PlayOneShot(punch);
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
                 Debug.Log("enemy found");
                 if(comboCount == 3 || kick == true)
                 {
-                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2);
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * 2 * DamageMulit);
                     
                 }
                 else
                 {
-                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage);
+                    enemiesToDamage[i].GetComponent<FrankMovement>().TakeDamage(damage * DamageMulit);
                 }
 
                 
@@ -207,5 +258,19 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(0);
             Destroy(gameObject);
         }
+    }
+
+    public void walkObservers(string message)
+    {
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0.1f;
+        sound.PlayOneShot(walking);
+    }
+
+    public void powerPick()
+    {
+        sound = GetComponent<AudioSource>();
+        sound.volume = 0.1f;
+        sound.PlayOneShot(powerup);
     }
 }

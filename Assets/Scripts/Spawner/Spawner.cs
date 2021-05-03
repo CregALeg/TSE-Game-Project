@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
     private int spawnLocations;
     public int spawned;
     public GameObject SceneChanger;
+    public GameObject GoSign;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class Spawner : MonoBehaviour
     {
         if(spawnTokens <= 0 && spawned == 0)
         {
+            GoSign.active = true;
             SceneChanger.active = true;
         }
 
