@@ -393,8 +393,8 @@ BoxCollider2D:
   m_Offset: {x: -0.10434604, y: 0.431983}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.40092593, y: 0.4983539}
-    oldSize: {x: 16, y: 9}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.4375, y: 7.875}
     newSize: {x: 2.56, y: 1.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1020,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: SceneChanger
