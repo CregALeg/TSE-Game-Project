@@ -669,15 +669,15 @@ PrefabInstance:
       objectReference: {fileID: 1203840923}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTime
-      value: 0.0001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnDelay
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: spawnTokens
-      value: 10000
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3017608170013016247, guid: f9c5e1c678af76b48828bdb9a218660b, type: 3}
       propertyPath: SceneChanger

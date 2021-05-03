@@ -10,7 +10,7 @@ public class SpeedBottle : MonoBehaviour
     {
 
        GameObject.Find("Player 1").GetComponent<PlayerMovement>().speedBoosting = true;
-       GameObject.Find("Player 1").GetComponent<PlayerMovement>().Speed = 25;
+       GameObject.Find("Player 1").GetComponent<PlayerMovement>().Speed = 20;
        GameObject.Find("Player 1").GetComponent<PlayerMovement>().powerPick();
        GameObject.Find("GameControl").GetComponent<GameControl>().SB = true;
        Destroy(gameObject);

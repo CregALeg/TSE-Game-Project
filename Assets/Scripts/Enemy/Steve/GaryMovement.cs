@@ -42,7 +42,9 @@ public class GaryMovement : FrankMovement
     {
         if (message == "attackEnded")
         {
-
+            sound = GetComponent<AudioSource>();
+            sound.volume = 0.1f;
+            sound.PlayOneShot(punch);
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsPlayer);
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {

@@ -26,7 +26,7 @@ public class FrankMovement : MonoBehaviour
     public bool facingRight;
     public float flipDistance;
     public GameObject DropOnDeath;
-    private AudioSource sound;
+    public AudioSource sound;
     public AudioClip death;
     public AudioClip walking;
     public AudioClip punch;

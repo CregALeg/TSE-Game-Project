@@ -59,6 +59,9 @@ MonoBehaviour:
   - {fileID: 3017608171339451322}
   spawnTime: 1
   spawnDelay: 3
+  spawned: 0
+  SceneChanger: {fileID: 0}
+  GoSign: {fileID: 0}
 --- !u!1 &3017608170644295190
 GameObject:
   m_ObjectHideFlags: 0
