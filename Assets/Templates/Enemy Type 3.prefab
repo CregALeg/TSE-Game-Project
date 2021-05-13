@@ -207,12 +207,13 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  damage: 1
+  damage: 2
   animator: {fileID: 143717948140166081}
   tokenValue: 0
   facingRight: 0
   flipDistance: 0
   DropOnDeath: {fileID: 8182236692304497668, guid: 9c235bb3b11d79446987e4f74f664e1e, type: 3}
+  sound: {fileID: 0}
   death: {fileID: 8300000, guid: 59807a194abd54cebbc02aa96e74c5e7, type: 3}
   walking: {fileID: 8300000, guid: 8dd485ce323e84b41acab44ed2359971, type: 3}
   punch: {fileID: 8300000, guid: d28eeb5d1b28bd3439a454b3b27ee47f, type: 3}
